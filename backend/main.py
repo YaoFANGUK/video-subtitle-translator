@@ -27,9 +27,9 @@ class SubtitleTranslator:
         subs = pysrt.open(self.srt_path, encoding='utf-8')
         with open(self.srt_out_path, 'w') as f:
             for sub in subs:
-                f.write(f"{sub.index}")
-                f.write(f"{sub.start} --> {sub.end}")
-                f.write(f"{self.translate(sub.text)}\n")
+                f.write(f"{sub.index}\n")
+                f.write(f"{sub.start} --> {sub.end}\n")
+                f.write(f"{self.translate(sub.text)}\n\n")
                 print(f"{sub.index}")
                 print(f"{sub.start} --> {sub.end}")
                 print(f"{self.translate(sub.text)}\n")  # 打印字幕的文本内容
